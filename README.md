@@ -6,7 +6,8 @@
 
 | Прототип | Ссылка |
 |---|---|
-| Панель метрик | [dashboard/](https://kkoder-cyclone.github.io/cyclone-previews/dashboard/) |
+| Панель команды (React, демо-данные) | [dashboard/](https://kkoder-cyclone.github.io/cyclone-previews/dashboard/) |
+| Cyclone Icons — витрина набора | [icons/](https://kkoder-cyclone.github.io/cyclone-previews/icons/) |
 | Редизайн | [redesign/](https://kkoder-cyclone.github.io/cyclone-previews/redesign/) |
 
 ## Как добавить новое превью
