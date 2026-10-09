@@ -8,6 +8,7 @@
 |---|---|
 | Панель команды (React, демо-данные) | [dashboard/](https://kkoder-cyclone.github.io/cyclone-previews/dashboard/) |
 | Cyclone Icons — витрина набора | [icons/](https://kkoder-cyclone.github.io/cyclone-previews/icons/) |
+| Студия движения — погоня в 3D (ArcEngine + Babylon.js), лицензии: `motion-studio/licenses.html` | [motion-studio/](https://kkoder-cyclone.github.io/cyclone-previews/motion-studio/) |
 | Редизайн | [redesign/](https://kkoder-cyclone.github.io/cyclone-previews/redesign/) |
 
 ## Как добавить новое превью

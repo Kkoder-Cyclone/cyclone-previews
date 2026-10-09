@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#bfeef5">
+<title>Студия движения — погоня</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="studio/css/fonts.css">
+<link rel="stylesheet" href="studio/css/studio.css">
+<!-- Движок: ArcEngine (MIT, © 2026 Tearevo) на Babylon.js 9.26 (Apache-2.0). Студия: IT, команда Kkoder. -->
+<script src="libs/simplex-noise.js"></script>
+<script src="libs/babylon.js"></script>
+<script src="libs/babylonjs.loaders.min.js"></script>
+</head>
+<body>
+<div id="sprites"></div>
+<div class="app" id="app">
+  <header class="top glass">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg class="cy-ic"><use href="#cy-nav-overview"/></svg></div>
+      <div><h1 data-t="appTitle">Студия движения</h1><div class="sub" data-t="appSub"></div></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="group view"><div class="seg" role="group" aria-label="Камера">
+      <button type="button" id="vScene" class="on"><svg class="cy-ic s16" aria-hidden="true"><use href="#ms-camera"/></svg><span data-t="viewScene"></span></button>
+      <button type="button" id="vFree"><svg class="cy-ic s16" aria-hidden="true"><use href="#ms-orbit"/></svg><span data-t="viewFree"></span></button>
+    </div></div>
+    <div class="group">
+      <button type="button" class="btn icon" id="undo" title="Отменить" aria-label="Отменить"><svg class="cy-ic" aria-hidden="true"><use href="#ms-undo"/></svg></button>
+      <button type="button" class="btn icon" id="redo" title="Вернуть" aria-label="Вернуть"><svg class="cy-ic" aria-hidden="true"><use href="#ms-redo"/></svg></button>
+    </div>
+  </header>
+
+  <section class="stage glass" aria-label="Сцена">
+    <div class="viewport" id="viewport">
+      <canvas id="world3d" aria-label="Трёхмерная сцена погони"></canvas>
+      <svg id="overlay" aria-hidden="false"></svg>
+      <div class="vp-badge" id="badge"></div>
+      <div class="loading" id="loading"><div><div data-t="loading"></div><div class="bar"><i></i></div></div></div>
+    </div>
+    <div class="transport">
+      <button type="button" class="btn" id="restart"><svg class="cy-ic" aria-hidden="true"><use href="#ms-restart"/></svg><span data-t="restart"></span></button>
+      <button type="button" class="btn primary" id="play"><svg class="cy-ic" aria-hidden="true"><use href="#ms-play"/></svg><span data-t="play"></span></button>
+      <span class="time" id="time" aria-live="off">0,0 / 18,0 с</span>
+      <span class="spacer"></span>
+      <button type="button" class="btn rec" id="record"><svg class="cy-ic" aria-hidden="true"><use href="#ms-record"/></svg><span class="lbl-long" data-t="record"></span><span class="lbl-short" data-t="recordShort"></span></button>
+      <a class="btn" id="download" hidden download="pogonya.webm"><svg class="cy-ic" aria-hidden="true"><use href="#ms-download"/></svg><span data-t="download"></span></a>
+    </div>
+  </section>
+
+  <section class="tl glass" id="timeline" aria-label="Шкала времени">
+    <div class="tl-head">
+      <h2><svg class="cy-ic s16" aria-hidden="true"><use href="#cy-metric-deadline"/></svg><span data-t="timelineTitle"></span></h2>
+      <div class="hint" data-t="timelineHint"></div>
+      <button type="button" class="btn" id="addKey"><svg class="cy-ic s16" aria-hidden="true"><use href="#ms-key"/></svg><span data-t="addKey"></span></button>
+    </div>
+    <div class="tl-body"></div>
+  </section>
+
+  <aside class="side glass" aria-label="Панель">
+    <div class="tabs"><div class="seg" role="tablist">
+      <button type="button" role="tab" data-tab="prompt" class="on"><svg class="cy-ic s16" aria-hidden="true"><use href="#cy-nav-glm"/></svg><span data-t="tabPrompt"></span></button>
+      <button type="button" role="tab" data-tab="scene"><svg class="cy-ic s16" aria-hidden="true"><use href="#ms-path"/></svg><span data-t="tabScene"></span></button>
+      <button type="button" role="tab" data-tab="camera"><svg class="cy-ic s16" aria-hidden="true"><use href="#ms-camera"/></svg><span data-t="tabCamera"></span></button>
+    </div></div>
+    <div class="pane on" id="pane-prompt" role="tabpanel"></div>
+    <div class="pane" id="pane-scene" role="tabpanel"></div>
+    <div class="pane" id="pane-camera" role="tabpanel"></div>
+  </aside>
+  <footer class="foot">Движок: <a href="https://github.com/xaidan777/ArcEngine" target="_blank" rel="noopener">ArcEngine</a> (MIT, © 2026 Tearevo) и Babylon.js (Apache-2.0). Студия движения: IT, команда Kkoder. Персонажи и город созданы кодом. · <a href="licenses.html">Лицензии</a></footer>
+</div>
+
+<script src="studio/js/StudioConstants.js"></script>
+<script src="js/World3D.js"></script>
+<script src="js/Terrain3D.js"></script>
+<script src="js/CameraControl.js"></script>
+<script src="js/Gltf3D.js"></script>
+<script src="studio/js/sprites.js"></script>
+<script src="studio/js/embedded-models.js"></script>
+<script src="studio/scenes/chase.js"></script>
+<script src="studio/js/text.js"></script>
+<script src="studio/js/scene.js"></script>
+<script src="studio/js/sim.js"></script>
+<script src="studio/js/stage.js"></script>
+<script src="studio/js/timeline.js"></script>
+<script src="studio/js/overlay.js"></script>
+<script src="studio/js/recorder.js"></script>
+<script src="studio/js/app.js"></script>
+</body>
+</html>
